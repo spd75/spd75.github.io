@@ -1,15 +1,14 @@
 ---
 layout: archive
-title: "Another"
-permalink: /another/
+title: "Introduction"
+permalink: /intro/
 author_profile: false
 redirect_from:
-  - /another
+  - /intro
 ---
 
-# Introduction
-#### Syyynth Hero: where Synth legends are made.
+## Syyynth Hero: where Synth legends are made.
 We created a game that is a cross between Piano Tiles and Guitar hero made to teach you how to play the synth with a variety of songs to choose from. We started this project with the intent of making a game that could teach you how to play an instrument using songs and a button system. Our project was inspired by rhythm games like Piano Tiles and Guitar Hero, and our interface looks like a simplified version of these games, with tiles (called NoteBars) that progress down the screen. When you press one of the buttons, it plays a note and each of the buttons corresponds to a note in the song. The goal is to press the right notes of each song at the right time until the end of the song. Correctly pressing a note increases your score, and the goal is to get as high of a score as possible. A player knows when the button needs to be pressed because the tile overlaps with the scoreline on the VGA screen and the button lights up as well. We hope you enjoy our creation and hopefully get to try to play the game at some point! 
 
-### Overview of Development Process
+## Overview of Development Process
 We started the project designing the GUI (Graphical User Interface) and displaying that design to the VGA monitor, since that is the aspect of the project that can be easily changed and for which we could make visible progress. This started as drawing the main game screen, to adding randomly floating notes that would come down the screen and wait to be clicked. We then designed the mechanical aspect of the game which had the buttons and laser-cut wooden frame for the arcade-like system we had. Once this was built, we tested each of the buttons by connecting them to the RP2040 and displaying a distinct output to the VGA screen. At this point, we had a working prototype similar to Piano tiles but with no music. We then used direct-digital synthesis like our first lab with crickets to simulate the sound of a synth and created a standard data-form for which we could add multiple songs the user could choose to play. The finishing touch was making LEDs attached to the buttons light up when the tile corresponding to the button was on the black line indicating the user should press the button. Once we finished this, we had a fully functional Syynth Hero game!
