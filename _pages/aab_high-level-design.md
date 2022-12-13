@@ -2,11 +2,11 @@
 permalink: /
 layout: archive
 title: "High Level Design"
-permalink: /intro/
+permalink: /high-level-design/
 author_profile: true
 redirect_from:
-  - /intro/
-  - /intro.html
+  - /high-level-design
+  - /high-level-design.html
 ---
 
 Rhythm games have been a staple game when thinking of simple games to pass the time, whether it is going to the arcade, playing a game on your phone while traveling, or sitting home playing with your friends. The game can be for beginners as well as veterans. We wanted to create a rhythm game that could teach you to play an instrument, so we wanted to do drums, but as we started working, we realized our system would be more suited towards something like a synth or piano. This is because in our original version of the game, we were planning to use FFT analysis to be able to detect songs through a microphone and generate the game automatically. However, this proved to be beyond challenging (nearly impossible), so we decided to pivot to implement a synth game instead.
