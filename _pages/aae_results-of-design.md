@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 ### Waveforms
-While we did gather scope data for our direct-digital synthesis wave, we weren’t able to capture a screenshot of the oscilloscope used. So, below is the ideal, continuous waveform which we produced with our direct digital synthesis.
+While we did gather scope data for our direct digital synthesis wave, we weren’t able to capture a screenshot of the oscilloscope used. So, below is the ideal, continuous waveform which we produced with our direct digital synthesis.
 
 <p align = "center">
 <img src="/images/a_images/results/sinewave.png" alt="image" style="width:80%">

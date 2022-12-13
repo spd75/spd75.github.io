@@ -16,6 +16,6 @@ The only standards for us to follow were the frame rate of our graphics and samp
 ### Intellectual Property Considerations
 As for IP, we have mentioned on several other pages of this site that we:
 * Used the vga graphics library from class to display our game on a VGA monitor
-* Were inspired by the DDS code written for lab 2
-* Were inspired by the previous layout of Whack-a-Mole
-* Used public domain music (with the exception of the Beattle’s song which we said we would remove)
+* Were inspired by the DDS code written for lab 1
+* Were inspired by the previous layout of Whack-a-Button
+* Used public domain music (with the exception of the Beattles' song which we said we would remove)

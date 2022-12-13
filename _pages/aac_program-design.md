@@ -115,7 +115,7 @@ With all of these elements put together, we were able to construct a well-functi
 
 
 ### Code Originating from Other Sources
-We didn’t take much from other sources some code for direct-digital synthesis and code for displaying to VGA. We used code from lab 1 for direct-digital synthesis. However, we didn't replicate this code exactly but instead followed a very similar structure and used it to understand implementation. We also used the vga_graphics library from lab 2 to be able to more easily create drawings on the VGA screen.
+We didn’t take much from other sources except for for direct-digital synthesis and code for displaying to VGA. We used code from lab 1 for direct-digital synthesis. However, we didn't replicate this code exactly but instead followed a very similar structure and used it to understand implementation. We also used the vga_graphics library from lab 2 to be able to more easily create drawings on the VGA screen.
 
 
 ### Things We Tried That Didn’t Work
