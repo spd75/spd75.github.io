@@ -2,7 +2,6 @@
 permalink: /
 layout: archive
 title: "Introduction"
-permalink: /intro/
 author_profile: true
 redirect_from:
   - /intro/
