@@ -14,25 +14,42 @@ Rhythm games have been a staple game when thinking of simple games to pass the t
 
 As for the game design, the menu screen is controlled by the red and green buttons in the center of our board. The green button cycles through the options and the red button selects the selected option. From the menu screen, you can also choose to change the song or the difficulty before playing. Once playing, 5 columns appear with tiles (NoteBars) moving down the screen, indicating when to play a certain note. Each of the buttons corresponds to playing a note in a respective column. You press the button when the LED lights up on the button and/or when the tile hits the black bar. If you hit the button at the right time, the tile will turn cyan and the score will increase by a certain amount of points. If you hit the button at the wrong time, the tile will turn red. The tiles will keep coming down until the game is over. The button pressed will play a note corresponding to that button regardless if it was at the right time. Once the game ends it will show you your score and then give you the option to go back to the main menu or restart the game. 
 
+<p align = "center">
+<img src="/images/a_images/high-level-design/physical.png" alt="image" style="width:70%">
+</p>
+<p align = "center">
+Buttons
+</p>
+
+
+
 ### High Level Design of Hardware and Software (with Tradeoffs)
 
 The diagram below shows the high-level block diagram of the game. The VGA screen is used to display the game’s graphics, the buttons control the game, and the DAC and speaker work together to play the synth’s audio. A major tradeoff we experienced in the hardware was that although our buttons provided a very nice interface for users to play our game, they didn’t work too well. We explain in more depth how we handled this issue in the software section of our report, and discuss our hardware design more in the hardware section of our report.
 
-<figure>
-<img src="/images/a_images/high-level-design/hardware.png" alt="image" style="width:30%">
-<figcaption align="center"><b>High Level Hardware Schematic</b></figcaption>
-</figure>
+<p align = "center">
+<img src="/images/a_images/high-level-design/hardware.png" alt="image" style="width:70%">
+</p>
+<p align = "center">
+High Level Hardware Schematic
+</p>
 
-Hello my manski
 
-
-![image](/images/profile.png "Another title")
 
 From the software’s perspective, we utilized both cores to be able to control the gameplay. Core 0 is responsible for receiving signals from the buttons, controlling the game logic, and displaying the graphics to the VGA screen. Core 1 is responsible for synthesizing all audio using direct digital synthesis and outputting it to the DAC. We didn’t really face any trade-offs on the software side of things, but we did experience some issues which are explained more in depth in the software section of our report.
 
 ### Any Math
 
 We didn't have to work too much with math, but we did have to design an equation for our direct-digital synthesis model. We derived this equation through lots of trial and error to attempt to generate a synthetic sound that allowed for clearly distinguishable tones and was smooth enough to almost sound like a synth bell. The equation and its corresponding wave are shown below.
+
+<p align = "center">
+<img src="/images/a_images/high-level-design/sine.png" alt="image" style="width:88%">
+</p>
+<p align = "center">
+Sine Equation Used for Synthesis w/ Graph
+</p>
+
+
 
 ### Intellectual Property Considerations
 
