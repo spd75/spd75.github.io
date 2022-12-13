@@ -1,10 +1,10 @@
 # main links links
 main:
   - title: "Intro"
-    url: /intro/
+    url: /
         
-  - title: "Blog Posts"
-    url: /year-archive/
+  - title: "High Level Design"
+    url: /high-level-design
     
   - title: "CV"
     url: /cv/

@@ -1,10 +1,12 @@
 ---
+permalink: /
 layout: archive
 title: "Introduction"
 permalink: /intro/
-author_profile: false
+author_profile: true
 redirect_from:
-  - /intro
+  - /intro/
+  - /intro.html
 ---
 
 ## Syyynth Hero: where Synth legends are made.
