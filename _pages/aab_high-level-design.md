@@ -28,23 +28,21 @@ The diagram below shows the high-level block diagram of the game. The VGA screen
 <p align = "center">
 <img src="/images/a_images/high-level-design/hardware.png" alt="image" style="width:70%">
 </p>
-<p align = "center">
+<small align = "center">
 High Level Hardware Schematic
-</p>
+</small>
 
-&nbsp;
 From the software’s perspective, we utilized both cores to be able to control the gameplay. Core 0 is responsible for receiving signals from the buttons, controlling the game logic, and displaying the graphics to the VGA screen. Core 1 is responsible for synthesizing all audio using direct digital synthesis and outputting it to the DAC. We didn’t really face any trade-offs on the software side of things, but we did experience some issues which are explained more in depth in the software section of our report.
 
-&nbsp;
 ### Math Used
 We didn't have to work too much with math, but we did have to design an equation for our direct-digital synthesis model. We derived this equation through lots of trial and error to attempt to generate a synthetic sound that allowed for clearly distinguishable tones and was smooth enough to almost sound like a synth bell. The equation and its corresponding wave are shown below.
 
 <p align = "center">
 <img src="/images/a_images/high-level-design/sine.png" alt="image" style="width:88%">
 </p>
-<p align = "center">
+<small align = "center">
 Sine Equation Used for Synthesis w/ Graph
-</p>
+</small>
 
 &nbsp;
 ### Intellectual Property Considerations

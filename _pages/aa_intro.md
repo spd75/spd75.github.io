@@ -12,11 +12,11 @@ redirect_from:
 We created a game that is a cross between Piano Tiles and Guitar hero made to teach you how to play the synth with a variety of songs to choose from. We started this project with the intent of making a game that could teach you how to play an instrument using songs and a button system. Our project was inspired by rhythm games like Piano Tiles and Guitar Hero, and our interface looks like a simplified version of these games, with tiles (called NoteBars) that progress down the screen. When you press one of the buttons, it plays a note and each of the buttons corresponds to a note in the song. The goal is to press the right notes of each song at the right time until the end of the song. Correctly pressing a note increases your score, and the goal is to get as high of a score as possible. A player knows when the button needs to be pressed because the tile overlaps with the scoreline on the VGA screen and the button lights up as well. We hope you enjoy our creation and hopefully get to try to play the game at some point! 
 
 <p align = "center">
-<img src="/images/a_images/intro/physical.png" alt="image" style="width:70%">
+<img src="/images/a_images/intro/stock.png" alt="image" style="width:70%">
 </p>
-<p align = "center">
+<small align = "center">
 Image of Game Board wired to RP2040
-</p>
+</small>
 
 &nbsp;
 ### Overview of Development Process
