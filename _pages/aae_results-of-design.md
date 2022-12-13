@@ -40,6 +40,13 @@ Musical frequency spectrum produced by our synth
 ### Speed of Execution
 Our game did run very efficiently at a consistent 32.5 frames per second. We were able to achieve this consistent frame rate by utilizing both cores and forcing fast execution times to rest between cycles, otherwise the game speed would look very funky. We decided to stress test our game using a controlled generation of NoteBars to determine what amount of NoteBars on the screen would result in the frame rate dropping below 32.5 frames per second. It turns out that this number was dependent on the height of each NoteBar, which is a variable that changes with game difficulty. Below, we have data which shows the number of NoteBars on a screen that would cause the game to drop below 32.5 frames per second for a given NoteBar height. 
 
+<p align = "center">
+<img src="/images/a_images/results/spped.png" alt="image" style="width:80%">
+</p>
+<p align = "center">
+Number of NoteBars that affects frame rate.
+</p>
+
 Besides graphics, there was no lag perceivable to a human between the time after a button was pressed and a note was both selected on the screen and played auditorily.
 
 ### Safety and Usability

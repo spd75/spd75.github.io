@@ -37,7 +37,21 @@ Emmanuel's Tasks:
 * Laser-cut board
 
 
-### Appendix E - References
+### Appendix E - Cost List
+Here is the Price of our Project:
+* Plywood (Cornell Store) - $16
+* Large Arcade Yellow Button x2 (Adafruit) - $5.95 * 2
+* Large Arcade Blue Button x2 (Adafruit) - $5.95 * 2
+* Large Arcade Red and Green Button (Adafruit) - $5.95 * 2
+* MCP 4802/4812/4822 (DigiKey) - $2.50
+* Power Supply (ECE Lab) - $0
+* VGA Monitor (ECE Lab) - $0
+* Wires, boards (ECE Lab) - $0
+
+Total Spent on Project: $54.20
+
+
+### Appendix F - References
 Insperation for our laser cut and button design came from the Whack-a-Button project from last year. We also used the same buttons they used. Their website can be found here:
 
 [Whack-a-Button](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2021/hl693_jw829_ap845/hl693_jw829_ap845/index.html)
