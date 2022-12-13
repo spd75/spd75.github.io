@@ -20,7 +20,7 @@ Once a button was clicked, its repeat counter would be set to 0 and its signal w
 
 <br>
 <p align = "center">
-<img src="/images/a_images/program/butinter.png" alt="image" style="width:94%">
+<img src="/images/a_images/program/butinter.png" alt="image" style="width:70%">
 </p>
 <p align = "center">
 Pseudo Code for what is performed in the button interrupts
@@ -34,7 +34,7 @@ The tricky part in the design was getting the audio to play. Just like in the cr
 
 <br>
 <p align = "center">
-<img src="/images/a_images/program/soundinter.png" alt="image" style="width:94%">
+<img src="/images/a_images/program/soundinter.png" alt="image" style="width:85%">
 </p>
 <p align = "center">
 Pseudo Code for what is performed in the sound interrupts
@@ -55,7 +55,7 @@ So, we tracked the state of these using 2 global variables called curScreenState
 
 <br>
 <p align = "center">
-<img src="/images/a_images/program/soundinter.png" alt="image" style="width:94%">
+<img src="/images/a_images/program/fsm.png" alt="image" style="width:94%">
 </p>
 <p align = "center">
 FSM for screen state
