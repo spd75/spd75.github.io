@@ -18,9 +18,9 @@ As for the game design, the menu screen is controlled by the red and green butto
 
 The diagram below shows the high-level block diagram of the game. The VGA screen is used to display the game’s graphics, the buttons control the game, and the DAC and speaker work together to play the synth’s audio. A major tradeoff we experienced in the hardware was that although our buttons provided a very nice interface for users to play our game, they didn’t work too well. We explain in more depth how we handled this issue in the software section of our report, and discuss our hardware design more in the hardware section of our report.
 
-(/images/a_images/high-level-design/hardware.png)
+![image](/images/a_images/high-level-design/hardware.png "Some title")
 
-(/images/profile.png)
+![image](/images/profile.png "Another title")
 
 From the software’s perspective, we utilized both cores to be able to control the gameplay. Core 0 is responsible for receiving signals from the buttons, controlling the game logic, and displaying the graphics to the VGA screen. Core 1 is responsible for synthesizing all audio using direct digital synthesis and outputting it to the DAC. We didn’t really face any trade-offs on the software side of things, but we did experience some issues which are explained more in depth in the software section of our report.
 
