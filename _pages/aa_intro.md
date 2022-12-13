@@ -8,7 +8,7 @@ redirect_from:
   - /intro.html
 ---
 
-Linke to our [demo](https://www.youtube.com/watch?v=SYxIqJ6wqH0&list=PLDqMkB5cbBA6AwYC_DElkDStUdOsTuIL7&index=8). Note that in the Appendix section we state that we approve of this video and site being on the course site.
+Link to our [demo](https://www.youtube.com/watch?v=SYxIqJ6wqH0&list=PLDqMkB5cbBA6AwYC_DElkDStUdOsTuIL7&index=8). Note that in the Appendix section we state that we approve of this video and site being on the course site.
 
 ### Syyynth Hero: where synth legends are made.
 We created a game that is a cross between Piano Tiles and Guitar Hero, made to teach you how to play the synth with a variety of songs to choose from. We started this project with the intent of making a game that could teach you how to play an instrument using songs and a button system. Our project was inspired by rhythm games like Piano Tiles and Guitar Hero, and our interface looks like a simplified version of these games, with tiles (called NoteBars) that progress down the screen. When you press one of the buttons, it plays a corresponding note. The goal is to correctly press the notes of each song at the right time until the song ends. Correctly pressing a note increases your score, and the goal is to get the highest score possible. A player knows when the button needs to be pressed because the tile overlaps with the scoreline on the VGA screen, and the button lights up as well. We hope you enjoy our creation and hopefully get to try to play the game at some point! 
