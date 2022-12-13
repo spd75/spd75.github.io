@@ -12,7 +12,7 @@ redirect_from:
 The program has 3 main operations that it runs: the main game loop (core 0), the button interrupts (core 0), and the audio synthesis interrupts (core 1). The game loop is a thread and is self-explanatory - we will explain this in more detail in a bit. However, the motivation behind the button interrupts and the audio synthesis interrupts may not be as intuitive.
 
 ### The Button Interrupts
-We introduced the button interrupts because we experienced a particularly unique problem when working with our arcade-style buttons - it usually double counted button clicks no matter how long a button was held down for. This meant we couldn't just check the GPIO pin for each button because its GPIO output wasn't indicative of its actual state. So, we created a timer interrupt that ran once every 900 microseconds which maintained some state variables (stored in global arrays) for each button and polled each of the buttons to determine whether it was on or off.
+We introduced the button interrupts because we experienced a particularly unique problem when working with our arcade-style buttons: it usually double counted button clicks no matter how long a button was held down for. This meant we couldn't just check the GPIO pin for each button because its GPIO output wasn't indicative of its actual state. So, we created a timer interrupt that ran once every 900 microseconds, maintained some state variables (stored in global arrays) for each button, and polled each of the buttons to determine whether it was on or off.
 
 Each button had a "repeats" counter and a "signals" signal. The repeats counter counted how many interrupts the button was detected to be in the OFF state. If the repeat counter was less than 10, then it wasn't ready to be clicked again. However, if it reached 10, it could be clicked.
 
@@ -23,7 +23,7 @@ Once a button was clicked, its repeat counter would be set to 0 and its signal w
 <img src="/images/a_images/program/butinter.png" alt="image" style="width:70%">
 </p>
 <p align = "center">
-Pseudo Code for what is performed in the button interrupts
+Pseudo-code for what is performed in the button interrupts
 </p>
 <br>
 
@@ -37,7 +37,7 @@ The tricky part in the design was getting the audio to play. Just like in the cr
 <img src="/images/a_images/program/soundinter.png" alt="image" style="width:85%">
 </p>
 <p align = "center">
-Pseudo Code for what is performed in the sound interrupts
+Pseudo-code for what is performed in the sound interrupts
 </p>
 <br>
 
