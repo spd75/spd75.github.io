@@ -5,9 +5,12 @@ main:
         
   - title: "High Level Design"
     url: /high-level-design
+
+  - title: "Program Design"
+    url: /program-design
+
+  - title: "Hardware Design"
+    url: /hardware-design
     
-  - title: "CV"
-    url: /cv/
-    
-  - title: "Guide"
-    url: /markdown/
+  - title: "Conclusion"
+    url: /conclusion
