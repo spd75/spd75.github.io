@@ -1,3 +1,13 @@
+Syynth Hero by spd75 and cea57.
+
+Please note that we built this website using this jekyll template - this is why it has so many files.
+
+*** IF YOU CANNOT RUN THIS ON YOUR LOCAL MACHINE, go to https://spd75.github.io - you should be able to find our website there. We imagine this is enough for grading,
+but if you must run it on your local machine, we provided documentation below on how to run it.***
+
+If you cannot run this, please email spd75@cornell.edu and cea57@cornell.edu. As we said, this website should be visible at https://spd75.github.io as a backup.
+
+
 A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
 
 I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
