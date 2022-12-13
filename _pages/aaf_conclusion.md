@@ -2,7 +2,7 @@
 layout: single
 title: "Conclusion"
 permalink: /conclusion/
-author_profile: true
+author_profile: false
 redirect_from:
   - /conclusion
   - /conclusion.html

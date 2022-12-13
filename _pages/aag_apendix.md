@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Appendix A and Other Appendices"
+title: "Appendix"
 permalink: /appendix/
-author_profile: true
+author_profile: false
 redirect_from:
   - /appendix
   - /appendix.html
