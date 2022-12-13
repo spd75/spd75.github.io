@@ -15,13 +15,58 @@ The group aprroves the video for inclusion on the course youtube channel.
 
 
 ### Appendix B - Code
-The code for the project can be found at the following github link. Please note that all of the code found on this GitHub repository needs to be located within Professor Adams' lab directory to run successfully.
+The code for the project can be found at the following GitHub link. Please note that all of the code found on this GitHub repository needs to be located within Professor Adams' lab directory to run successfully.
 
 [Local Project Directory](https://github.com/spd75/ece4760-final)
 
 
 ### Appendix C - Schematics
 All schematics can be found under the respective sections. However, here they are again.
+
+<br>
+<p align = "center">
+<img src="/images/a_images/hardware/buttons.png" alt="image" style="width:74%">
+</p>
+<p align = "center">
+Button schematic
+</p>
+<br>
+
+<br>
+<p align = "center">
+<img src="/images/a_images/hardware/transistors.png" alt="image" style="width:64%">
+</p>
+<p align = "center">
+Transistor circuit with base connecting to GPIO pins
+</p>
+<br>
+
+<br>
+<p align = "center">
+<img src="/images/a_images/hardware/all.png" alt="image" style="width:64%">
+</p>
+<p align = "center">
+Schematic including all buttons and LEDS - note that buttons and LEDs are together in real life, but we separated them here to simplify visuals
+</p>
+<br>
+
+<br>
+<p align = "center">
+<img src="/images/a_images/hardware/audio.png" alt="image" style="width:60%">
+</p>
+<p align = "center">
+Schematic for sound production part of our project.
+</p>
+<br>
+
+<br>
+<p align = "center">
+<img src="/images/a_images/hardware/vga.png" alt="image" style="width:60%">
+</p>
+<p align = "center">
+Schematic for VGA connections.
+</p>
+<br>
 
 
 ### Appendix D - Work Breakdown
