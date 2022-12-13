@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Conclusion"
 permalink: /conclusion/
 author_profile: true

@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Program Design"
 permalink: /program-design/
 author_profile: true

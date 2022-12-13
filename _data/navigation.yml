@@ -11,6 +11,9 @@ main:
 
   - title: "Hardware Design"
     url: /hardware-design
-    
+
+  - title: "Results of Design"
+    url: /results
+
   - title: "Conclusion"
     url: /conclusion

@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Hardware Design"
 permalink: /hardware-design/
 author_profile: true
