@@ -1,8 +1,8 @@
 ---
 permalink: /
-layout: archive
+layout: single
 title: "Introduction"
-author_profile: true
+author_profile: false
 redirect_from:
   - /intro/
   - /intro.html

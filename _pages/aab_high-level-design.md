@@ -1,8 +1,8 @@
 ---
-layout: archive
+layout: default
 title: "High Level Design"
 permalink: /high-level-design/
-author_profile: true
+author_profile: false
 redirect_from:
   - /high-level-design
   - /high-level-design.html
@@ -18,7 +18,17 @@ As for the game design, the menu screen is controlled by the red and green butto
 
 The diagram below shows the high-level block diagram of the game. The VGA screen is used to display the game’s graphics, the buttons control the game, and the DAC and speaker work together to play the synth’s audio. A major tradeoff we experienced in the hardware was that although our buttons provided a very nice interface for users to play our game, they didn’t work too well. We explain in more depth how we handled this issue in the software section of our report, and discuss our hardware design more in the hardware section of our report.
 
-![image](/images/a_images/high-level-design/hardware.png "Some title")
+<figure>
+<img src="/images/a_images/high-level-design/hardware.png" alt="image" style="width:30s%">
+<figcaption align = "center"><b>High Level Hardware Schematic</b></figcaption>
+</figure>
+
+Hello my manski
+
+<figure>
+<img src="../images/a_images/high-level-design/hardware.png" alt="image" style="width:30s%">
+<figcaption align = "center"><b>High Level Hardware Schematic</b></figcaption>
+</figure>
 
 ![image](/images/profile.png "Another title")
 
