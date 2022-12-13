@@ -1,5 +1,4 @@
 ---
-permalink: /
 layout: archive
 title: "High Level Design"
 permalink: /high-level-design/
