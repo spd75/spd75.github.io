@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Results of Design"
-permalink: /conclusion/
+permalink: /results/
 author_profile: true
 redirect_from:
   - /results
@@ -25,7 +25,7 @@ While we didn’t get oscilloscope data, we did capture frequency data when play
 <img src="/images/a_images/results/withfifths.png" alt="image" style="width:80%">
 </p>
 <p align = "center">
-Musical frequency spectrum produced by our synth with unintentionally 5th notes
+Musical frequency spectrum produced by our synth with unintentional 5th notes
 </p>
 
 As you can see, the graph above has very defined white and yellow lines. This wasn’t ideal for us because we wanted a very accurate, single note to play each time a button was pressed. After some debugging, we were able to achieve the following frequency mapping, which demonstrates significantly more accurate pitch control on our game. Each note is within 0.5Hz of the true note frequency, which is plenty accurate and indistinguishable to the human ear.
