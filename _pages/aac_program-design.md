@@ -28,9 +28,9 @@ Pseudo-code for what is performed in the button interrupts
 <br>
 
 ### The Audio Synthesis Interrupts
-We added the audio synthesis timer interrupt for 2 reasons. First, we didn't want it to affect game performance. For this reason, we added it to core 1. Second, we wanted the frequency to sound very smooth and have no interruptions-this is why we put it on a timer interrupt on a core all by itself.
+We added the audio synthesis timer interrupt for 2 reasons. First, we didn't want it to affect game performance. For this reason, we added it to core 1. Second, we wanted the frequency to sound very smooth and have no interruption.
 
-The tricky part in the design was getting the audio to play. Just like in the crickets lab, we used direct digital synthesis. However, we wanted to trigger these sounds to play when a specific action occurred (when a button was pressed) - we didn't want the sound to play continuously on loop. Because audio synthesis occurred on core 1, this required communication between core 0 and core 1 through the PT_FIFO_READ and WRITE operations. So, when core 0's main thread detected a button signal, it wrote the frequency corresponding to this button into the FIFO. Core 1's main thread constantly read from the FIFO, so it was able to detect that core 0 wanted it to play a specific frequency. At this point, the thread added data to a global array that would instruct the audio synthesis interrupt to begin playing a synth sound at the specified frequency. The interrupt looped over this array to check what frequencies it needed to play. If it had any number of frequencies, it would play them all until they had been held for their total duration. If it didn't have any frequencies, it would simply remain silent and begin to play once core 1 provided it with some. This is how we were able to synthesize audio (even multiple notes at once) without impacting our performance.
+The tricky part in the design was getting the audio to play. Just like in the crickets lab, we used direct digital synthesis. However, we wanted to trigger these sounds to play when a specific action occurred (when a button was pressed) - we didn't want the sound to play continuously on loop. Because audio synthesis occurred on core 1, this required communication between core 0 and core 1 through the PT_FIFO_READ and WRITE operations. So, when core 0's main thread detected a button signal, it wrote the frequency corresponding to this button into the FIFO. Core 1's main thread constantly read from the FIFO, so it was able to detect that core 0 wanted it to play a specific frequency. At this point, the thread added data to a global array that would instruct the audio synthesis interrupt to begin playing a synth sound at the specified frequency. The interrupt looped over this array to check what frequencies it needed to play. If it had any number of frequencies, it would play them all until they had been held for their total duration. If it didn't have any frequencies, it would simply remain silent and begin to play once core 0 provided it with some. This is how we were able to synthesize audio (even multiple notes at once) without impacting our performance.
 
 <br>
 <p align = "center">
@@ -43,7 +43,7 @@ Pseudo-code for what is performed in the sound interrupts
 
 
 ### The Game Loop Thread
-The game loop thread was the most complex part of the project as it handled a lot! The body of it manages the screen state – essentially, what screen are we on at a given time? There were 6 main screens that it had to switch between, namely:
+The game loop thread was the most complex part of the project as it handled a lot! The body of it manages the screen state – essentially, screen is currently displayed. There were 6 main screens that it had to switch between, namely:
 * Home Screen/Menu Screen
 * Gameplay Screen
 * Paused Screen
@@ -65,9 +65,7 @@ FSM for screen state
 Screens such as the Song Selection Screen and the Difficulty Selection Screen weren't too difficult to implement as they mainly just changed certain global variables (such as the data that controlled the song and difficulty for the next game). The most difficult screen to implement was the Gameplay screen.
 
 ### The Actual Gameplay
-The main element of the gameplay was the NoteBar struct. A NoteBar was the "object" that essentially indicated when a player had to press a button to score points. The screen below shows 3 NoteBars.
-
-The implementation of NoteBars in our code is shown below.
+The main element of the gameplay was the NoteBar struct. A NoteBar was the "object" that essentially indicated when a player had to press a button to score points. The implementation of NoteBars in our code is shown below.
 
 <br>
 <p align = "center">
@@ -78,9 +76,9 @@ Code implementation of NoteBar struct
 </p>
 <br>
 
-While many of the variables within the NoteBar are well-explained by the comments, the one thing that is less clear are the next and prev pointers. We added these to allow NoteBars to act like a linked list so that in each iteration of the game loop, we could loop through all of the NoteBars currently on the screen and update their position and redraw them. This would also allow us to add and remove NoteBars with ease. A linked list worked too because based off our designs, each NoteBar would move down the screen at a constant speed predetermined by the game's difficulty, so a NoteBar that is further up the screen should never disappear before a NoteBar that is below it.
+While many of the variables within the NoteBar are well-explained by the comments, the one thing that is less clear are the next and prev pointers. We added these to allow NoteBars to act like a linked list so that in each iteration of the game loop, we could loop through all of the NoteBars on the screen and update their position and redraw them. This would also allow us to add and remove NoteBars with ease. The reason a linked list could work with our implementation was because each NoteBar would move down the screen at a constant speed predetermined by the game's difficulty, so a NoteBar that is further up the screen should never disappear before a NoteBar below it.
 
-As mentioned, the implementation of the NoteBar is essential because it allows us to easily loop through all of the NoteBars and redraw them to produce a functional game. Aside from this, our gameplay contains functions to check if any buttons have been clicked and to send a message to core 1 to play the appropriate sound, and it also contains a yield to keep the frame rate constant. If the frame rate wasn't constant, then rendering less NoteBars would result in much faster game play and more NoteBars would be much slower gameplay, which would make the song sound super inconsistent.
+As mentioned, the implementation of the NoteBar is essential because it allows us to easily loop through all of the NoteBars and redraw them to produce a functional game. Aside from this, our gameplay contains functions to check if any buttons have been clicked and to send a message to core 1 to play the appropriate sound. It also contains a yield to keep the frame rate constant. If the frame rate wasn't constant, then rendering less NoteBars would result in much faster game play and more NoteBars would result in much slower gameplay, which would make the song sound super inconsistent.
 
 The last essential part to explain how the program for our game worked is to explain how we encoded the data for songs.
 
