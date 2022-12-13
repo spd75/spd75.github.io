@@ -19,7 +19,7 @@ The diagram below shows the high-level block diagram of the game. The VGA screen
 
 From the software’s perspective, we utilized both cores to be able to control the gameplay. Core 0 is responsible for receiving signals from the buttons, controlling the game logic, and displaying the graphics to the VGA screen. Core 1 is responsible for synthesizing all audio using direct digital synthesis and outputting it to the DAC. We didn’t really face any trade-offs on the software side of things, but we did experience some issues which are explained more in depth in the software section of our report.
 
-Our project required that we design an equation for our direct-digital synthesis model. We derived this equation through lots of trial and error to attempt to generate a synthetic sound that allowed for clearly distinguishable tones and was smooth enough to almost sound like a synth bell. This equation was:
+We didn't have to work too much with math, but we did have to design an equation for our direct-digital synthesis model. We derived this equation through lots of trial and error to attempt to generate a synthetic sound that allowed for clearly distinguishable tones and was smooth enough to almost sound like a synth bell. The equation and its corresponding wave are shown below.
 
 ## Intellectual Property Considerations
 
