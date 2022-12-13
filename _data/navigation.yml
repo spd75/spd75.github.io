@@ -1,10 +1,7 @@
 # main links links
 main:
-  - title: "Publications"
-    url: /publications/
-
-  - title: "Another"
-    url: /another/
+  - title: "Intro"
+    url: /intro/
         
   - title: "Blog Posts"
     url: /year-archive/
