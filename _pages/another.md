@@ -2,7 +2,7 @@
 layout: archive
 title: "Another"
 permalink: /another/
-author_profile: true
+author_profile: false
 redirect_from:
   - /another
 ---
