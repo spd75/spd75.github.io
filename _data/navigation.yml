@@ -17,3 +17,6 @@ main:
 
   - title: "Conclusion"
     url: /conclusion
+
+  - title: "Appendix A/Other Appendices"
+    url: /appendix

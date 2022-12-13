@@ -12,16 +12,34 @@ redirect_from:
 The program has 3 main operations that it runs: the main game loop (core 0), the button interrupts (core 0), and the audio synthesis interrupts (core 1). The game loop is a thread and is self-explanatory - we will explain this in more detail in a bit. However, the motivation behind the button interrupts and the audio synthesis interrupts may not be as intuitive.
 
 ### The Button Interrupts
-We introduced the button interrupt because we experienced a particularly unique problem when working with our arcade-style buttons - it usually double counted button clicks no matter how long a button was held down for. This meant we couldn't just check the GPIO pin for each button because its GPIO output wasn't indicative of its actual state. So, we created a timer interrupt that ran once every 900 microseconds which maintained some state variables (stored in global arrays) for each button and polled each of the buttons to determine whether it was on or off.
+We introduced the button interrupts because we experienced a particularly unique problem when working with our arcade-style buttons - it usually double counted button clicks no matter how long a button was held down for. This meant we couldn't just check the GPIO pin for each button because its GPIO output wasn't indicative of its actual state. So, we created a timer interrupt that ran once every 900 microseconds which maintained some state variables (stored in global arrays) for each button and polled each of the buttons to determine whether it was on or off.
 
 Each button had a "repeats" counter and a "signals" signal. The repeats counter counted how many interrupts the button was detected to be in the OFF state. If the repeat counter was less than 10, then it wasn't ready to be clicked again. However, if it reached 10, it could be clicked.
 
-Once a button was clicked, its repeat counter would be set to 0 and its signal would be set to one. This signal variable is essential because since button clicks are being recorded asynchronously, the rest of the program would need to know when a button was recently clicked. So, when the signal for a button is set to 1, this means that a button was recently clicked and once the main thread read this, it would reset the button's signal to 0.
+Once a button was clicked, its repeat counter would be set to 0 and its signal would be set to one. This signal variable is essential because since button clicks are being recorded asynchronously, the rest of the program would need to know when a button was recently clicked. So, when the signal for a button is set to 1, this means that a button was recently clicked, and once the main thread read this, it would reset the button's signal to 0.
+
+<br>
+<p align = "center">
+<img src="/images/a_images/program/butinter.png" alt="image" style="width:94%">
+</p>
+<p align = "center">
+Pseudo Code for what is performed in the button interrupts
+</p>
+<br>
 
 ### The Audio Synthesis Interrupts
 We added the audio synthesis timer interrupt for 2 reasons. First, we didn't want it to affect game performance. For this reason, we added it to core 1. Second, we wanted the frequency to sound very smooth and have no interruptions-this is why we put it on a timer interrupt on a core all by itself.
 
 The tricky part in the design was getting the audio to play. Just like in the crickets lab, we used direct digital synthesis. However, we wanted to trigger these sounds to play when a specific action occurred (when a button was pressed) - we didn't want the sound to play continuously on loop. Because audio synthesis occurred on core 1, this required communication between core 0 and core 1 through the PT_FIFO_READ and WRITE operations. So, when core 0's main thread detected a button signal, it wrote the frequency corresponding to this button into the FIFO. Core 1's main thread constantly read from the FIFO, so it was able to detect that core 0 wanted it to play a specific frequency. At this point, the thread added data to a global array that would instruct the audio synthesis interrupt to begin playing a synth sound at the specified frequency. The interrupt looped over this array to check what frequencies it needed to play. If it had any number of frequencies, it would play them all until they had been held for their total duration. If it didn't have any frequencies, it would simply remain silent and begin to play once core 1 provided it with some. This is how we were able to synthesize audio (even multiple notes at once) without impacting our performance.
+
+<br>
+<p align = "center">
+<img src="/images/a_images/program/soundinter.png" alt="image" style="width:94%">
+</p>
+<p align = "center">
+Pseudo Code for what is performed in the sound interrupts
+</p>
+<br>
 
 
 ### The Game Loop Thread
@@ -35,8 +53,16 @@ The game loop thread was the most complex part of the project as it handled a lo
 
 So, we tracked the state of these using 2 global variables called curScreenState and oldScreenState. The reason we used 2 was so that when curScreenState changed and no longer equaled oldScreenState, we could indicate a screen state change and reset the screen drawing accordingly. A FSM of the screen state is shown below.
 
-Screens such as the Song Selection Screen and the Difficulty Selection Screen weren't too difficult to implement as they mainly just changed certain global variables (such as the data that controlled the song and difficulty for the next game). The most difficult screen to implement was the Gameplay screen.
+<br>
+<p align = "center">
+<img src="/images/a_images/program/soundinter.png" alt="image" style="width:94%">
+</p>
+<p align = "center">
+FSM for screen state
+</p>
+<br>
 
+Screens such as the Song Selection Screen and the Difficulty Selection Screen weren't too difficult to implement as they mainly just changed certain global variables (such as the data that controlled the song and difficulty for the next game). The most difficult screen to implement was the Gameplay screen.
 
 ### The Actual Gameplay
 The main element of the gameplay was the NoteBar struct. A NoteBar was the "object" that essentially indicated when a player had to press a button to score points. The screen below shows 3 NoteBars.
