@@ -10,13 +10,12 @@ redirect_from:
 
 
 ### Appendix A - Approval to Use Report
-
 The group approves this report for inclusion on the course website.
 The group aprroves the video for inclusion on the course youtube channel.
 
 ### Appendix B - Code
-The code for the project can be found at the following github link. Please note that all of the code found on this GitHub repository can be 
-
+The code for the project can be found at the following github link. Please note that all of the code found on this GitHub repository needs to be located within Professor Adams' lab directory to run successfully.
+[Local Project Directory](https://github.com/spd75/ece4760-final)
 
 ### Appendix C - Schematics
 All schematics can be found under the respective sections. However, here they are again.
