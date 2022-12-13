@@ -78,3 +78,8 @@ Schematic for VGA connections.
 </p>
 <br>
 
+### Designs Originating from Other Sources
+We didn't take much from other sources, except for the board design. For this, we used a similar design to one of last year's projects, called Whack-a-Button. We did create our own board and circuitry, but we did use the same buttons and our design was inspired by theirs.
+
+### Things We Tried That Didn’t Work
+From the hardware side of things, our buttons didn't originally work. We did explain above in detail in the program section how we fixed this.

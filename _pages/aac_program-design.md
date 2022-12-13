@@ -85,10 +85,10 @@ The last essential part to explain how the program for our game worked is to exp
 ### Encoding Songs
 We needed 4 main pieces of data to encode a song: 
 
-* What column a NoteBar would appear in
-* What time a NoteBar would appear in such column
-* What frequency would be played when a specific button was hit
-* When the appropriate time to play such frequency would be
+1. What column a NoteBar would appear in
+2. What time a NoteBar would appear in such column
+3. What frequency would be played when a specific button was hit
+4. When the appropriate time to play such frequency would be
 
 The reason we needed 3 and 4 was because we were only able to put 5 columns in the game, but most songs include more than 5 notes. So, if we wanted to play more complex songs, we'd need to include more frequencies.
 
@@ -99,30 +99,26 @@ To explain how we encode these songs, we will use an example from our code:
 <img src="/images/a_images/program/encoding.png" alt="image" style="width:94%">
 </p>
 <p align = "center">
-First part of the encoding for Twinkle Twinkle Little Star.
+First part of the encoding for Twinkle Twinkle Little Star
 </p>
 <br>
 
 Song2_NoteColumns - this contains the column from which each NoteBar will spawn. The 0th NoteBar will spawn in the 0th column, the 1st in the 0th column, the 2nd in the 3rd column, the 3rd in the 3rd column, etc. The end of a song is marked by a 9 in the array.
 
-Song2_NoteDeltas - this contains the number of beats that elapses between each NoteBar before the next is spawned. The 0th element is always 0, so really the n + 1 element in this array marks the amount of beats that must occur after the n NoteBar is spawned before the n + 1 NoteBar must be spawned. For example, after we spawn the 0th NoteBar in the 0th column, the program will wait for 2 beats before it releases the second NoteBar in the 0th column.
+Song2_NoteDeltas - this contains the number of beats that elapses between each NoteBar before the next is spawned. The 0th element is always 0, so really the n + 1 element in this array marks the amount of beats that must occur after the n NoteBar is spawned and before the n + 1 NoteBar is spawned. For example, after we spawn the 0th NoteBar in the 0th column, the program will wait for 2 beats before it releases the second NoteBar in the 0th column.
 
-Song2_NoteFreqs - this is the only 2D array, and it indicates which frequencies will be played at certain periods in the song. Each sub-array has 5 elements and corresponds to each of the 5 buttons as expected. So, in the first period, the 4th button (starting at 0) will play an A, but in the second period, the 4th button will play a G.
+Song2_NoteFreqs - this is the only 2D array, and it indicates which frequencies will be played at certain periods in the song. Each sub-array has 5 elements and corresponds to each of the 5 buttons as expected. So, in the 0th period, the 4th button (starting at 0) will play an A, but in the 1st period, the 4th button will play a G.
 
 Song2_NoteFreqChanges - this indicates how many notes make up a period. For example, the 0th period will be 7 notes long, the 1st period will be 21 notes long, the 2nd period will be 7 notes long, and the 3rd period will last until the end of the song.
 
 With all of these elements put together, we were able to construct a well-functioning, cohesive game that is very entertaining to play!
 
 
-### Code/Designs Originating from Other Sources
-We didn’t take much from other sources, except for our board design, some code for direct-digital synthesis, and code for displaying to VGA. For the board, we used the same buttons and laser-cut design as the group from last year which created a whack-a-mole game. We did create our own board and circuitry, but the idea originated from seeing their design. 
-
-We also used code from lab 1 for direct-digital synthesis. However, we didn't replicate this code exactly, but instead followed a very similar structure and used it to understand implementation. We also used the vga_graphics library from lab 2 to be able to more easily create drawings on the VGA screen.
+### Code Originating from Other Sources
+We didn’t take much from other sources some code for direct-digital synthesis and code for displaying to VGA. We used code from lab 1 for direct-digital synthesis. However, we didn't replicate this code exactly but instead followed a very similar structure and used it to understand implementation. We also used the vga_graphics library from lab 2 to be able to more easily create drawings on the VGA screen.
 
 
 ### Things We Tried That Didn’t Work
-From the hardware side of things, our buttons didn't originally work. We did explain above in detail what the issue was and how we fixed it, so check "The Button Interrupts" section if interested.
-
-On the software side, we experienced a lot of trouble with how we structured our code. Throughout many points in the project, we tried using structs. We tried to use it once to represent the game state and another time to represent the synthesis for sound. In both cases, the structs would be arguments passed into functions that would manipulate its state variables through its pointer. However, this didn't work at all either time and caused the game to crash, so we abandoned this and instead used global variables as the primary way to manage state in the game. We actually spent almost two weeks on this issue.
+We experienced a lot of trouble with how we structured our code. Throughout many points in the project, we tried using structs. We tried to use them to represent the game state and to represent the synthesis for sound. In both cases, the structs would be arguments passed into functions that would manipulate its variables through its pointer. However, this didn't work either time and caused the game to crash, so we abandoned this and instead used global variables as the primary way to manage state in the game. We spent almost two weeks on this issue.
 
 Another issue we faced was that our original goal was to be able to play drum songs without hardcoding the music. However, after visualizing FFTs of multiple songs, we realized this would be near impossible, so we decided to pivot to Syynth Hero instead.
