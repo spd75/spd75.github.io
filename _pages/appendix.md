@@ -5,7 +5,6 @@ permalink: /appendix/
 author_profile: false
 redirect_from:
   - /appendix
-  - /appendix.html
 ---
 
 

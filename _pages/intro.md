@@ -5,7 +5,6 @@ title: "Introduction"
 author_profile: false
 redirect_from:
   - /intro/
-  - /intro.html
 ---
 
 Link to our [demo](https://www.youtube.com/watch?v=SYxIqJ6wqH0&list=PLDqMkB5cbBA6AwYC_DElkDStUdOsTuIL7&index=8). Note that in the Appendix section we state that we approve of this video and site being on the course site.
