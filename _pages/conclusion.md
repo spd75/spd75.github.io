@@ -3,9 +3,6 @@ layout: single
 title: "Conclusion"
 permalink: /conclusion/
 author_profile: false
-redirect_from:
-  - /conclusion
-  - /conclusion.html
 ---
 
 As we mentioned, we didn’t expect our original idea of creating a rhythm-based game by listening to the audio of a song to be so infeasible. This certainly was disappointing and fell short of our expectations, but we felt like we were able to pivot appropriately and still finalize a very appealing project. We felt this was our only main shortcoming and thought that the rest of our implementation was on-par with our vision. However, if we did have to pick something to improve on, we would say that next time we would spend more time trying to synthesize different types of instruments other than a simple synth. We think it would be very cool to allow the user to pick between a piano, guitar, flute, etc. However, based off previous attempts, we understand that synthesizing these instruments may prove to be a significant challenge and is really only feasible with a more long-term project. Overall, we are very satisfied with the results of our game and think it is a fun game to play and show our friends!

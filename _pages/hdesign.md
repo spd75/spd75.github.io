@@ -3,8 +3,6 @@ layout: single
 title: "Hardware Design"
 permalink: /hardware-design/
 author_profile: false
-redirect_from:
-  - /hardware-design
 ---
 
 ### Buttons and LEDS

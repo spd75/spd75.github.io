@@ -3,8 +3,6 @@ layout: single
 title: "Appendix"
 permalink: /appendix/
 author_profile: false
-redirect_from:
-  - /appendix
 ---
 
 

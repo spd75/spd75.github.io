@@ -3,9 +3,6 @@ layout: single
 title: "Results of Design"
 permalink: /results/
 author_profile: false
-redirect_from:
-  - /results
-  - /results.html
 ---
 
 ### Waveforms
