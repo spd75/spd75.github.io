@@ -11,7 +11,7 @@ The program has three main operations that it runs: the main game loop (core 0),
 ### The Button Interrupts
 We introduced the button interrupts because we experienced a particularly unique problem when working with our arcade-style buttons. The problem was that it usually double counted button clicks no matter how long a button was held down for. This meant we couldn't just check the GPIO pin for each button because its GPIO output wasn't indicative of its actual state. So, we created a timer interrupt that runs once every 900 microseconds, maintains some state variables (stored in global arrays) for each button, and polls each of the buttons to determine whether it is on or off.
 
-Each button has a "repeats" counter and a "signals" signal. The repeats counter counts how many interrupts the button is detected to be in the OFF state. If the repeat counter is less than 10, then it isn't ready to be clicked again. However, if it reaches 10, it can be clicked.
+Each button has a "repeats" counter and a "signals" signal. The repeats counter counts for how many interrupts the button is detected to be in the OFF state. If the repeat counter is less than 10, then it isn't ready to be clicked again. However, if it reaches 10, it can be clicked.
 
 Once a button is clicked, its repeat counter will be be set to 0 and its signal will be set to 1. This signal variable is essential because since button clicks are being recorded asynchronously, the rest of the program needs to know when a button has recently been clicked. So, when the signal for a button is set to 1, this means that a button was recently clicked, and once the main thread reads this, it resets the button's signal to 0.
 
@@ -48,7 +48,7 @@ The game loop thread was the most complex part of the project as it handled a lo
 * Song Selection Screen
 * Difficulty Selection Screen
 
-So, we track the state of these using 2 global variables called curScreenState and oldScreenState. The reason we use 2 was so that when curScreenState changes and no longer equals oldScreenState, we can indicate a screen state change and reset the screen drawing accordingly. A FSM of the screen state is shown below.
+So, we track the screen state using 2 global variables called curScreenState and oldScreenState. The reason we use 2 is so that when curScreenState changes and no longer equals oldScreenState, we can indicate a screen state change and reset the screen drawing accordingly. A FSM of the screen state is shown below.
 
 <br>
 <p align = "center">
@@ -73,7 +73,7 @@ Code implementation of NoteBar struct
 </p>
 <br>
 
-While many of the variables within the NoteBar are well-explained by the comments, the one thing that is less clear are the next and prev pointers. We added these to allow NoteBars to act like a linked list so that in each iteration of the game loop, the game loop can loop through all of the NoteBars on the screen, update their position, redraw them. This also allows the game to remove NoteBars with ease. The reason a linked list works with our implementation is because each NoteBar moves down the screen at a constant speed predetermined by the game's difficulty, so a NoteBar that is further up the screen should never disappear before a NoteBar below it.
+While many of the variables within the NoteBar are well-explained by the comments, the next and prev pointers may be less clear. We added these to allow NoteBars to act like a linked list so that in each iteration of the game loop, the game loop can loop through all of the NoteBars on the screen, update their position, and redraw them. This also allows the game to remove NoteBars with ease. The reason a linked list works with our implementation is because each NoteBar moves down the screen at a constant speed predetermined by the game's difficulty, so a NoteBar that is further up the screen should never disappear before a NoteBar below it.
 
 As mentioned, the implementation of the NoteBar is essential because it allows us to easily loop through all of the NoteBars and redraw them to produce a functional game. Aside from this, our gameplay contains functions to check if any buttons have been clicked and to send a message to core 1 to play the appropriate sound. It also contains a yield to keep the frame rate constant. If the frame rate wasn't constant, then rendering less NoteBars would result in much faster game play and more NoteBars would result in much slower gameplay, which would make the song sound super inconsistent.
 

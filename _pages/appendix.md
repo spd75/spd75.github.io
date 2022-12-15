@@ -18,7 +18,7 @@ The code for the project can be found at the following GitHub link. Please note 
 
 
 ### Appendix C - Schematics
-All schematics can be found under the respective sections. However, here they are again.
+All schematics can be found under the Hardware Design section. However, here they are again.
 
 <br>
 <p align = "center">
@@ -88,6 +88,7 @@ Here is the Price of our Project:
 * MCP 4802/4812/4822 (DigiKey) - $2.50
 * Power Supply (ECE Lab) - $0
 * VGA Monitor (ECE Lab) - $0
+* Simple Speaker (ECE Lab) - $0
 * Wires, boards (ECE Lab) - $0
 
 Total Spent on Project: $54.20

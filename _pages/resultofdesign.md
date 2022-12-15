@@ -61,5 +61,5 @@ Surprisingly, we were able to achieve all intended behaviors within a few tries.
 
 We believe we were able to achieve intended behaviors almost immediately due to the safety mechanism we implemented. It required that all major global variables that indicate screen and selection state be controlled from within the main core 0 thread. Doing this ensured whenever a user changed the screen’s state, it would do so in the main thread.
 
-Also, the use of simple arcade buttons provided some base level of safety as well because it was impossible for a user to input any NULL or other undesirable types into our program.
+Also, the use of simple arcade buttons provided some base level of safety as well because it was impossible for a user to input NULL or other undesirable types into our program.
 

@@ -6,14 +6,14 @@ author_profile: false
 ---
 
 ### Buttons and LEDS
-The mechanical structure of the game is a wooden box. There is an open front and open back for easy access to parts for assembling and wiring. The only thing that is visible to the player is the buttons on the top of the board. In the figure below, the frames of the box is shown.
+The mechanical structure of the game is a wooden box. There is an open front and open back for easy access to parts for assembling and wiring. The only thing that is visible to the player is the buttons on the top of the board. In the figure below, the frames of the box are shown.
 
 <br>
 <p align = "center">
 <img src="/images/a_images/hardware/box.png" alt="image" style="width:90%">
 </p>
 <p align = "center">
-Schematic for VGA connections.
+Box frames in CAD
 </p>
 <br>
 
@@ -58,7 +58,7 @@ We also utilized the RP2040's SPI features to output audio that was generated vi
 <img src="/images/a_images/hardware/audio.png" alt="image" style="width:60%">
 </p>
 <p align = "center">
-Schematic for sound production part of our project.
+Schematic for sound production part of our project
 </p>
 <br>
 
@@ -71,7 +71,7 @@ For the visuals, we used a VGA screen and a VGA library that used DMA to send da
 <img src="/images/a_images/hardware/vga.png" alt="image" style="width:60%">
 </p>
 <p align = "center">
-Schematic for VGA connections.
+Schematic for VGA connections.\
 </p>
 <br>
 
