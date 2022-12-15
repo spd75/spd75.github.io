@@ -41,7 +41,7 @@ Our game did run very efficiently at a consistent 32.5 frames per second. We wer
 <img src="/images/a_images/results/speed.png" alt="image" style="width:80%">
 </p>
 <p align = "center">
-Number of NoteBars that affects frame rate.
+Number of NoteBars that affects frame rate
 </p>
 
 Besides graphics, there was no lag perceivable to a human between the time after a button was pressed and a note was both selected on the screen and played auditorily.
