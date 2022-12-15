@@ -17,7 +17,7 @@ Schematic for VGA connections.
 </p>
 <br>
 
-After the frame was cut, we installed the 60 mm buttons into it. The game has six buttons connected to this wooden box, each of which has four ports. Two of these ports are used for the button's output signal that an input into the RP2040. One wire is connected to a GPIO pin, and the other wire is connected to ground. The GPIO pins have a built-in resistor and have a voltage of 3.3 V. In the software, we pull up these GPIO pins so that a LOW signal indicates that the button has been pressed. The figure below shows the button circuit.
+After the frame was cut, we installed the 60 mm buttons into it. The game has six buttons connected to this wooden box, each of which has four ports. Two of these ports are used for the button's output signal that input into the RP2040. One wire is connected to a GPIO pin, and the other wire is connected to ground. The GPIO pins have a built-in resistor and have a voltage of 3.3 V. In the software, we pull up these GPIO pins so that a LOW signal indicates that the button has been pressed. The figure below shows the button circuit.
 
 <br>
 <p align = "center">
@@ -39,7 +39,7 @@ Transistor circuit with base connecting to GPIO pins
 </p>
 <br>
 
-The values for the resistors we received from the previous projects are the ones that used these buttons.
+The values for the resistors we received from previous projects are the ones that used these buttons.
 
 <br>
 <p align = "center">
@@ -79,4 +79,4 @@ Schematic for VGA connections.
 The only thing we took from other sources was the board design. For this, we used a similar design to one of last year's projects, called Whack-a-Button. We did create our own board and circuitry, but we did use the same buttons and our design was inspired by theirs.
 
 ### Things We Tried That Didn’t Work
-From the hardware side of things, our buttons didn't originally work. We did explain above in detail in the program section how we fixed this.
+From the hardware side of things, our buttons didn't originally work. We did explain in detail in the Program Design section how we fixed this.
